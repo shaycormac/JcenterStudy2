@@ -1,4 +1,4 @@
-.gradle
+
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
@@ -44,11 +44,11 @@ proguard/
 
 # Created by .ignore support plugin (hsz.mobi)
 
-build.gradle
+
 gradle.properties
 gradle/
 gradlew
 gradlew.bat
-settings.gradle
+
 
 
