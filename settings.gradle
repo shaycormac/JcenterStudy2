@@ -1,1 +1,1 @@
-include ':app', ':binghualibrary'
+include ':app', ':binghualibrary', ':测试下拉刷新上拉加载'

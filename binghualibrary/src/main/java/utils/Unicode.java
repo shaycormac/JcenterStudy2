@@ -8,7 +8,7 @@ import android.text.TextUtils;
 public class Unicode {
 
     /**
-     * 把unicode模式的字符串,转成正常的字符串
+     * 
      */
     public static String decodeUnicode(String theString) {
         if (TextUtils.isEmpty(theString)) {

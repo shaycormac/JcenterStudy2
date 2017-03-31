@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.testpulltorrefshlistview.MainActivity"
+    android:background="#379999"
+    tools:showIn="@layout/activity_main">
+    <com.example.testpulltorrefshlistview.widget.library.PullToRefreshListView
+        android:id="@+id/pull_refresh_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#000000"
+        android:divider="#19000000"
+        android:dividerHeight="4dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        app:ptrAnimationStyle="rotate"
+        app:ptrHeaderTextColor="#ffffff"
+        app:ptrHeaderSubTextColor="#00ffff"
+        app:ptrHeaderBackground="@null"
+        app:ptrDrawable="@mipmap/ic_launcher" />
+
+</RelativeLayout>

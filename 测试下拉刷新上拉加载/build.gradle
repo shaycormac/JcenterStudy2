@@ -1,10 +1,11 @@
-apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.android.application'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
     defaultConfig {
+        applicationId "com.example.testpulltorrefshlistview"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
@@ -27,19 +28,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
     testCompile 'junit:junit:4.12'
 }
-publish {
-    userOrg = 'shay'//bintray.com
-    groupId = 'com.fanfan'//jcenter
-    artifactId = 'binghualibrary'//
-    publishVersion = '1.0.2'//
-    desc = 'this is my first library'//
-    website = 'https://github.com/shaycormac/JcenterStudy2'//
-}
-
-/*task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    options.encoding = "UTF-8"
-}*/
