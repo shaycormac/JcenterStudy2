@@ -45,8 +45,8 @@ public class PullToRefreshScrollView extends PullToRefreshBase<ScrollView> {
 	}
 
 	@Override
-	public final Orientation getPullToRefreshScrollDirection() {
-		return Orientation.VERTICAL;
+	public int getPullToRefreshScrollDirection() {
+		return VERTICAL;
 	}
 
 	@Override

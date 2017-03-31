@@ -38,7 +38,7 @@ public class RotateLoadingLayout extends LoadingLayout {
 
 	private final boolean mRotateDrawableWhilePulling;
 
-	public RotateLoadingLayout(Context context, PullToRefreshBase.Mode mode, PullToRefreshBase.Orientation scrollDirection,
+	public RotateLoadingLayout(Context context, PullToRefreshBase.Mode mode, @PullToRefreshBase.Orientation int scrollDirection,
 							   TypedArray attrs) {
 		super(context, mode, scrollDirection, attrs);
 

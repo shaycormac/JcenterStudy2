@@ -90,8 +90,8 @@ public class PullToRefreshWebView extends PullToRefreshBase<WebView> {
 	}
 
 	@Override
-	public final Orientation getPullToRefreshScrollDirection() {
-		return Orientation.VERTICAL;
+	public int getPullToRefreshScrollDirection() {
+		return VERTICAL;
 	}
 
 	@Override

@@ -58,23 +58,27 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 	private final TextView mSubHeaderText;
 
 	protected final PullToRefreshBase.Mode mMode;
-	protected final PullToRefreshBase.Orientation mScrollDirection;
+	//protected final PullToRefreshBase.Orientation mScrollDirection;
+	@PullToRefreshBase.Orientation
+	protected int direction=PullToRefreshBase.VERTICAL;
 
 	private CharSequence mPullLabel;
 	private CharSequence mRefreshingLabel;
 	private CharSequence mReleaseLabel;
 
-	public LoadingLayout(Context context, final PullToRefreshBase.Mode mode, final PullToRefreshBase.Orientation scrollDirection,
+	public LoadingLayout(Context context, final PullToRefreshBase.Mode mode,@PullToRefreshBase.Orientation final int direction,
 						 TypedArray attrs) {
 		super(context);
 		mMode = mode;
-		mScrollDirection = scrollDirection;
+		//mScrollDirection = scrollDirection;
+		this.direction = direction;
 
-		switch (scrollDirection) {
-		case HORIZONTAL:
+		switch (direction) 
+		{
+		case PullToRefreshBase.HORIZONTAL:
 			LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header_horizontal, this);
 			break;
-		case VERTICAL:
+		case PullToRefreshBase.VERTICAL:
 		default:
 			LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header_vertical, this);
 			break;
@@ -90,7 +94,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 
 		switch (mode) {
 		case PULL_FROM_END:
-			lp.gravity = scrollDirection == PullToRefreshBase.Orientation.VERTICAL ? Gravity.TOP : Gravity.LEFT;
+			lp.gravity = direction == PullToRefreshBase.VERTICAL ? Gravity.TOP : Gravity.LEFT;
 
 			// Load in labels
 			mPullLabel = context.getString(R.string.pull_to_refresh_from_bottom_pull_label);
@@ -100,7 +104,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 
 		case PULL_FROM_START:
 		default:
-			lp.gravity = scrollDirection == PullToRefreshBase.Orientation.VERTICAL ? Gravity.BOTTOM : Gravity.RIGHT;
+			lp.gravity = direction ==PullToRefreshBase.VERTICAL ? Gravity.BOTTOM : Gravity.RIGHT;
 
 			// Load in labels
 			mPullLabel = context.getString(R.string.pull_to_refresh_pull_label);
@@ -196,10 +200,10 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 	}
 
 	public final int getContentSize() {
-		switch (mScrollDirection) {
-		case HORIZONTAL:
+		switch (direction) {
+		case PullToRefreshBase.HORIZONTAL:
 			return mInnerLayout.getWidth();
-		case VERTICAL:
+		case PullToRefreshBase.VERTICAL:
 		default:
 			return mInnerLayout.getHeight();
 		}

@@ -19,6 +19,9 @@ import android.annotation.TargetApi;
 import android.util.Log;
 import android.view.View;
 
+import static com.example.testpulltorrefshlistview.widget.library.PullToRefreshBase.HORIZONTAL;
+import static com.example.testpulltorrefshlistview.widget.library.PullToRefreshBase.VERTICAL;
+
 
 @TargetApi(9)
 public final class OverscrollHelper {

@@ -46,8 +46,8 @@ public class PullToRefreshGridView extends PullToRefreshAdapterViewBase<GridView
 	}
 
 	@Override
-	public final Orientation getPullToRefreshScrollDirection() {
-		return Orientation.VERTICAL;
+	public int getPullToRefreshScrollDirection() {
+		return VERTICAL;
 	}
 
 	@Override

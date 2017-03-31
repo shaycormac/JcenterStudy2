@@ -39,8 +39,11 @@ public class FlipLoadingLayout extends LoadingLayout {
 
 	private final Animation mRotateAnimation, mResetRotateAnimation;
 
-	public FlipLoadingLayout(Context context, final PullToRefreshBase.Mode mode, final PullToRefreshBase.Orientation scrollDirection, TypedArray attrs) {
-		super(context, mode, scrollDirection, attrs);
+	@PullToRefreshBase.Orientation
+	public int direction;
+
+	public FlipLoadingLayout(Context context, final PullToRefreshBase.Mode mode, @PullToRefreshBase.Orientation final int direction, TypedArray attrs) {
+		super(context, mode, direction, attrs);
 
 		final int rotateAngle = mode == PULL_FROM_START ? -180 : 180;
 
@@ -124,7 +127,7 @@ public class FlipLoadingLayout extends LoadingLayout {
 		float angle = 0f;
 		switch (mMode) {
 		case PULL_FROM_END:
-			if (mScrollDirection == PullToRefreshBase.Orientation.HORIZONTAL) {
+			if (direction == PullToRefreshBase.VERTICAL) {
 				angle = 90f;
 			} else {
 				angle = 180f;
@@ -132,7 +135,7 @@ public class FlipLoadingLayout extends LoadingLayout {
 			break;
 
 		case PULL_FROM_START:
-			if (mScrollDirection == PullToRefreshBase.Orientation.HORIZONTAL) {
+			if (direction == PullToRefreshBase.HORIZONTAL) {
 				angle = 270f;
 			}
 			break;
