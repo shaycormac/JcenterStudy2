@@ -33,7 +33,7 @@ publish {
     userOrg = 'shay'//bintray.com
     groupId = 'com.fanfan'//jcenter
     artifactId = 'binghualibrary'//
-    publishVersion = '1.0.2'//
+    publishVersion = '1.0.3'//
     desc = 'this is my first library'//
     website = 'https://github.com/shaycormac/JcenterStudy2'//
 }
